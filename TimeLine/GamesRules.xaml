@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="TimeLine.GamesRules"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:local="clr-namespace:TimeLine"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="750">
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="FontFamily" Value="Calibri"/>
+                <Setter Property="FontWeight" Value="DemiBold"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+            </Style>
+        </Grid.Resources>
+        
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://application:,,,/TimeLine;component/Images/BackgroundRules.jpg" 
+                        Stretch="UniformToFill" RenderOptions.BitmapScalingMode="HighQuality" Opacity="0.75"/>
+        </Grid.Background>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Border Margin="25" Grid.Row="0">
+            <Border.Background>
+                <SolidColorBrush Color="White" Opacity="0.4"/>
+            </Border.Background>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="3*"/>
+                </Grid.RowDefinitions>
+                <Viewbox Stretch="Uniform" Grid.Row="0">
+                    <TextBlock Text="Правила гри:" Margin="25" Foreground="Black" FontSize="48"/>
+                </Viewbox>
+                <Viewbox Stretch="Uniform" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center">
+                    <TextBlock x:Name="textBoxRules" Margin="25 0 25 25" HorizontalAlignment="Stretch" VerticalAlignment="Top" 
+                           TextWrapping="Wrap" Foreground="Black" FontSize="36" Width="800"/>
+                </Viewbox>
+            </Grid>
+        </Border>
+
+        <Button x:Name="buttonStartGame" Grid.Row="1" Content="Розпочати гру" Margin="25 0 25 25" Height="60" Width="450" 
+            Foreground="Black" FontWeight="SemiBold" FontSize="24" FontFamily="Calibri" Click="buttonStartGame_Click">
+            <Button.Background>
+                <SolidColorBrush Color="White" Opacity="0.65"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+</UserControl>
